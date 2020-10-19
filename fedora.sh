@@ -29,7 +29,7 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 # update system
 sudo dnf update -y
 
-# interate through packages and installs them if not already installed
+# iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
 	if ! sudo dnf list --installed | grep -q $package_name; then
 		sudo dnf install "$package_name" -y
