@@ -43,7 +43,6 @@ for package_name in ${PACKAGE_LIST[@]}; do
 	fi
 done
 
-# iterate through packages and installs them if not already installed
 for flatpak_name in ${FLATPAK_LIST[@]}; do
 	if ! flatpak list | grep -q $flatpak_name; then
 		flatpak install "$flatpak_name" -y
