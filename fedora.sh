@@ -14,7 +14,9 @@ PACKAGE_LIST=(
 
 FLATPAK_LIST=(
 	discord
-	spotify	
+	spotify
+	komikku
+	glimpse
 )
 
 # enable rpmfusion
