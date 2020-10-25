@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+VSCODE_URL="https://go.microsoft.com/fwlink/\?LinkID\=760867"
+
+DOWNLOAD_DIRECTORY="$HOME/Downloads"
+
 PACKAGE_LIST=(
 	vim
 	tilix
@@ -35,6 +39,14 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 
 # add flathub repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# download third party software
+
+wget $VSCODE_URL -O $DOWNLOAD_DIRECTORY/code.rpm
+
+# install third party software
+
+sudo dnf install $DOWNLOAD_DIRECTORY/*.rpm
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
