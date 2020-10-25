@@ -33,6 +33,9 @@ sudo dnf groupupdate sound-and-video -y
 sudo dnf copr enable dawid/better_fonts -y
 sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 
+# add flathub repository
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
 	if ! sudo dnf list --installed | grep -q $package_name; then
