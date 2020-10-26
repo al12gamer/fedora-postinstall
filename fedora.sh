@@ -17,10 +17,11 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	discord
-	spotify
-	komikku
-	glimpse
+	com.spotify.Client
+	info.febvre.Komikku
+	org.glimpse_editor.Glimpse
+	org.gnome.Podcasts
+	org.gnome.gitlab.somas.Apostrophe
 )
 
 # enable rpmfusion
