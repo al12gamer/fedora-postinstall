@@ -1,6 +1,6 @@
 # Fedora Post Install script
 
-shell script for personal use, setting up fedora the way i like it
+shell script for personal use, setting up fedora the way i like it.
 
 ## Quick Start
 ```bash
@@ -9,3 +9,5 @@ cd fedora-postinstall
 chmod +x fedora.sh
 ./fedora.sh
 ```
+
+software not installed through the package manager goes to ***`$HOME/Downloads`*** and is installed with dnf
