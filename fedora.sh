@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-VSCODE_URL="https://go.microsoft.com/fwlink/\?LinkID\=760867"
-
-DOWNLOAD_DIRECTORY="$HOME/Downloads"
-
 PACKAGE_LIST=(
 	vim
 	tilix
@@ -14,6 +10,7 @@ PACKAGE_LIST=(
 	steam
 	geary
 	hydrapaper
+	code
 )
 
 FLATPAK_LIST=(
@@ -41,13 +38,16 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 # add flathub repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# download third party software
+# add third party software
 
-wget $VSCODE_URL -O $DOWNLOAD_DIRECTORY/code.rpm
+# vscode
 
-# install third party software
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-sudo dnf install $DOWNLOAD_DIRECTORY/*.rpm
+# update repositories
+
+sudo dnf check-update -y
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
