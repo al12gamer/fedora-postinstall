@@ -22,37 +22,37 @@ FLATPAK_LIST=(
 )
 
 # enable rpmfusion
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yq
 
-sudo dnf groupupdate core -y
+sudo dnf groupupdate core -yq
 
 # install multimedia packages
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -yq
 
-sudo dnf groupupdate sound-and-video -y
+sudo dnf groupupdate sound-and-video -yq
 
 # fedora better fonts
-sudo dnf copr enable dawid/better_fonts -y
-sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
+sudo dnf copr enable dawid/better_fonts -yq
+sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -yq
 
 # add flathub repository
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # add third party software
 
 # vscode
 
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc --quiet
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
 # update repositories
 
-sudo dnf check-update -y
+sudo dnf check-update -yq
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
 	if ! sudo dnf list --installed | grep -q $package_name; then
-		sudo dnf install "$package_name" -y
+		sudo dnf install "$package_name" -yq
 	else
 		echo "$package_name already installed"
 	fi
@@ -67,5 +67,5 @@ for flatpak_name in ${FLATPAK_LIST[@]}; do
 done
 
 # upgrade packages
-sudo dnf upgrade -y
-sudo dnf autoremove -y
+sudo dnf upgrade -yq
+sudo dnf autoremove -yq
