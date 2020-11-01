@@ -10,7 +10,5 @@ chmod +x fedora.sh
 ./fedora.sh
 ```
 
-software not installed through the package manager goes to ***`$HOME/Downloads`*** and is installed with dnf.
-
 ## License
 Have a look at the [license file](./LICENSE) for details.
