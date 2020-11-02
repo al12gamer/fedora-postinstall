@@ -2,15 +2,14 @@
 
 PACKAGE_LIST=(
 	vim
-	tilix
+	ProtonUpdater
 	zsh
 	fira-code-fonts
 	lutris
 	akmod-nvidia
 	steam
 	geary
-	hydrapaper
-	code
+	jotta-cli
 )
 
 FLATPAK_LIST=(
@@ -40,10 +39,8 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # add third party software
 
-# vscode
-
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc --quiet
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# add Proton Updater from COPR
+sudo dnf copr enable david35mm/ProtonUpdater
 
 # update repositories
 
