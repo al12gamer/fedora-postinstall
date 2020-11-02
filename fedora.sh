@@ -16,6 +16,9 @@ PACKAGE_LIST=(
 	mcomix3
 	qbittorrent
 	htop
+	gnome-boxes
+	handbrake
+	
 )
 
 FLATPAK_LIST=(
@@ -36,6 +39,9 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-autom
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yq
 
 sudo dnf groupupdate core -yq
+
+# install development tools 
+sudo dnf groupinstall "Development Tools" -yq
 
 # install multimedia packages
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -yq
