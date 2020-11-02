@@ -29,7 +29,6 @@ FLATPAK_LIST=(
 
 # gnome settings
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-gsettings set org.gnome.desktop.interface clock-format 24h
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
@@ -67,15 +66,18 @@ sudo dnf check-update -yq
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
-	if ! sudo dnf list --installed | grep -q ^$package_name; then
+	if ! sudo dnf list --installed | grep -q "^\<$package_name\>"; then
+		echo "installing $package_name..."
+		sleep .5
 		sudo dnf install "$package_name" -yq
+		echo "$package_name installed"
 	else
 		echo "$package_name already installed"
 	fi
 done
 
 for flatpak_name in ${FLATPAK_LIST[@]}; do
-	if ! flatpak list | grep -q ^$flatpak_name; then
+	if ! flatpak list | grep -q $flatpak_name; then
 		flatpak install "$flatpak_name" -y
 	else
 		echo "$package_name already installed"
