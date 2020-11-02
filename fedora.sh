@@ -4,6 +4,7 @@ PACKAGE_LIST=(
 	vim
 	calibre
 	zsh
+	gnome-tweaks
 	fira-code-fonts
 	lutris
 	akmod-nvidia
