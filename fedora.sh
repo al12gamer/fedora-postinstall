@@ -2,22 +2,25 @@
 
 PACKAGE_LIST=(
 	vim
-	ProtonUpdater
+	calibre
 	zsh
 	fira-code-fonts
 	lutris
 	akmod-nvidia
 	steam
-	geary
 	jotta-cli
+	vlc
+	gamemode
 )
 
 FLATPAK_LIST=(
-	com.spotify.Client
 	info.febvre.Komikku
 	org.glimpse_editor.Glimpse
 	org.gnome.Podcasts
-	org.gnome.gitlab.somas.Apostrophe
+	com.discordapp.Discord
+	com.github.calo001.fondo
+	io.lbry.lbry-app
+	org.telegram.desktop
 )
 
 # enable rpmfusion
@@ -40,7 +43,11 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add third party software
 
 # add Proton Updater from COPR
-sudo dnf copr enable david35mm/ProtonUpdater
+sudo dnf copr enable david35mm/ProtonUpdater -yq
+sudo dnf install ProtonUpdater -yq
+
+# add jotta-cli for backups
+echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
 
 # update repositories
 
@@ -66,3 +73,6 @@ done
 # upgrade packages
 sudo dnf upgrade -yq
 sudo dnf autoremove -yq
+
+# start jottad at system start
+sudo systemctl enable jottad
