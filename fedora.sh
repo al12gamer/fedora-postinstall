@@ -13,11 +13,13 @@ PACKAGE_LIST=(
 	vlc
 	gamemode
 	ProtonUpdater
+	mcomix3
+	qbittorrent
+	htop
 )
 
 FLATPAK_LIST=(
 	info.febvre.Komikku
-	org.glimpse_editor.Glimpse
 	org.gnome.Podcasts
 	com.discordapp.Discord
 	com.github.calo001.fondo
@@ -77,6 +79,3 @@ done
 # upgrade packages
 sudo dnf upgrade -yq
 sudo dnf autoremove -yq
-
-# start jottad at system start
-sudo systemctl enable jottad
