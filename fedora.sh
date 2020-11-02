@@ -12,6 +12,7 @@ PACKAGE_LIST=(
 	jotta-cli
 	vlc
 	gamemode
+	ProtonUpdater
 )
 
 FLATPAK_LIST=(
@@ -45,7 +46,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # add Proton Updater from COPR
 sudo dnf copr enable david35mm/ProtonUpdater -yq
-sudo dnf install ProtonUpdater -yq
+
+# add winepak flathub
+sudo flatpak remote-add --if-not-exists winepak https://dl.winepak.org/repo/winepak.flatpakrepo
 
 # add jotta-cli for backups
 echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
