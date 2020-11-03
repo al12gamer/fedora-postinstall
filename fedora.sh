@@ -4,6 +4,13 @@ PACKAGE_LIST=(
 	zsh
 	fira-code-fonts
 	vlc
+	blender
+	steam
+	gamemode
+	qbittorrent
+	ProtonUpdater
+	htop
+	handbrake
 )
 
 FLATPAK_LIST=(
