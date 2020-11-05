@@ -4,7 +4,6 @@ PACKAGE_LIST=(
 	vim
 	calibre
 	zsh
-	gnome-tweaks
 	fira-code-fonts
 	lutris
 	akmod-nvidia
@@ -18,6 +17,8 @@ PACKAGE_LIST=(
 	htop
 	gnome-boxes
 	handbrake
+	gnome-extensions-app
+	gnome-tweaks
 	gnome-shell-extension-pop-shell
 	
 )
