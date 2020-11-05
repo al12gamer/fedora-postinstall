@@ -18,6 +18,7 @@ PACKAGE_LIST=(
 	htop
 	gnome-boxes
 	handbrake
+	gnome-shell-extension-pop-shell
 	
 )
 
