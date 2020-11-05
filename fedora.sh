@@ -8,6 +8,7 @@ PACKAGE_LIST=(
 	lutris
 	akmod-nvidia
 	steam
+	legendary
 	jotta-cli
 	vlc
 	gamemode
