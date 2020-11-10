@@ -7,6 +7,7 @@ PACKAGE_LIST=(
 	fira-code-fonts
 	lutris
 	akmod-nvidia
+	lutris
 	steam
 	legendary
 	jotta-cli
