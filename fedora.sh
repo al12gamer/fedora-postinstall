@@ -25,6 +25,7 @@ PACKAGE_LIST=(
 	python3
 	youtube-dl
 	neofetch
+	nmap
 	
 )
 
