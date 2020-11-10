@@ -21,6 +21,9 @@ PACKAGE_LIST=(
 	gnome-extensions-app
 	gnome-tweaks
 	gnome-shell-extension-pop-shell
+	youtube-dl
+	python3
+	neofetch
 	
 )
 
