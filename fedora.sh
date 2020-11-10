@@ -26,6 +26,7 @@ PACKAGE_LIST=(
 	youtube-dl
 	neofetch
 	nmap
+	pv
 	
 )
 
