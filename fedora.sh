@@ -27,6 +27,8 @@ PACKAGE_LIST=(
 	neofetch
 	nmap
 	pv
+	virt-manager
+	virtio-win
 	
 )
 
@@ -69,9 +71,10 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add Proton Updater from COPR
 sudo dnf copr enable david35mm/ProtonUpdater -yq
 
-# add winepak flathub
-sudo flatpak remote-add --if-not-exists winepak https://dl.winepak.org/repo/winepak.flatpakrepo
-
+# add virtio
+sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo \
+  -O /etc/yum.repos.d/virtio-win.repo
+ 
 # add jotta-cli for backups
 echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
 
