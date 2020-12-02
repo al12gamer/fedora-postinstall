@@ -39,6 +39,7 @@ FLATPAK_LIST=(
 	com.github.calo001.fondo
 	io.lbry.lbry-app
 	org.telegram.desktop
+	com.mojang.Minecraft
 )
 
 # gnome settings
