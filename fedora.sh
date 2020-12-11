@@ -5,7 +5,6 @@ PACKAGE_LIST=(
 	calibre
 	zsh
 	fira-code-fonts
-	lutris
 	akmod-nvidia
 	lutris
 	steam
@@ -31,6 +30,7 @@ PACKAGE_LIST=(
 	wget
 	java-latest-openjdk
 	java-11-openjdk
+	
 )
 
 FLATPAK_LIST=(
