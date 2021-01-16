@@ -30,6 +30,7 @@ PACKAGE_LIST=(
 	wget
 	java-latest-openjdk
 	java-11-openjdk
+	wine
 	
 )
 
@@ -49,21 +50,21 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
 # enable rpmfusion
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yq
 
-sudo dnf groupupdate core -y
+sudo dnf groupupdate core -yq
 
 # install development tools 
-sudo dnf groupinstall "Development Tools" -y
+sudo dnf groupinstall "Development Tools" -yq
 
 # install multimedia packages
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -yq
 
-sudo dnf groupupdate sound-and-video -y
+sudo dnf groupupdate sound-and-video -yq
 
 # fedora better fonts
-sudo dnf copr enable dawid/better_fonts -y
-sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
+sudo dnf copr enable dawid/better_fonts -yq
+sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -yq
 
 # add flathub repository
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -71,7 +72,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add third party software
 
 # add Proton Updater from COPR
-sudo dnf copr enable david35mm/ProtonUpdater -y
+sudo dnf copr enable david35mm/ProtonUpdater -yq
 
 # add virtio
 sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo \
@@ -82,7 +83,7 @@ echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
 
 # update repositories
 
-sudo dnf check-update -y
+sudo dnf check-update -yq
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
@@ -108,9 +109,9 @@ done
 echo "Grabbing Proton 5.9-GE-8 and extracting it to the Proton folder here, please move this to your new steam compatibility tools folder"
 sleep 1
 wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-GE-8-ST/Proton-5.9-GE-8-ST.tar.gz
-mkdir Proton
+mkdir ~/Proton
 tar -xvf Proton-5.9-GE-8-ST.tar.gz ~/Proton
 
 # upgrade packages
-sudo dnf upgrade -y
-sudo dnf autoremove -y
+sudo dnf upgrade -yq
+sudo dnf autoremove -yq
