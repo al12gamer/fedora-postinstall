@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 PACKAGE_LIST=(
-	zsh
 	fira-code-fonts
 	vlc
 	blender
@@ -11,6 +10,7 @@ PACKAGE_LIST=(
 	ProtonUpdater
 	htop
 	handbrake
+	wine
 )
 
 FLATPAK_LIST=(
