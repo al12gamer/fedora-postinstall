@@ -20,6 +20,7 @@ PACKAGE_LIST=(
 	handbrake
 	gnome-extensions-app
 	gnome-tweaks
+	gnome-shell-extension-pop-shell
 	python3
 	youtube-dl
 	neofetch
