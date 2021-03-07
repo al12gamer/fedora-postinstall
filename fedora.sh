@@ -113,6 +113,10 @@ wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-G
 mkdir ~/Proton
 tar -xvf Proton-5.9-GE-8-ST.tar.gz ~/Proton
 
+# add ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# add zsh config
+
 # upgrade packages
 sudo dnf upgrade -yq
 sudo dnf autoremove -yq
