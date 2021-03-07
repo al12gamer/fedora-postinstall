@@ -97,6 +97,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias ul="sudo apt-get update -y && sudo apt-get upgrade -y && flatpak update"
+alias ul="sudo dnf upgrade -y && flatpak update"
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
