@@ -1,5 +1,0 @@
-[jotta-cli]
-name=Jottacloud CLI
-baseurl=https://repo.jotta.us/redhat
-gpgcheck=1
-gpgkey=https://repo.jotta.us/RPM-GPG-KEY-jotta-cli
