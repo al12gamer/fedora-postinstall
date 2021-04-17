@@ -22,6 +22,7 @@ PACKAGE_LIST=(
 	gnome-tweaks
 	gnome-shell-extension-pop-shell
 	python3
+	python3-pip
 	youtube-dl
 	neofetch
 	nmap
@@ -48,7 +49,6 @@ FLATPAK_LIST=(
 # gnome settings
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
 # enable rpmfusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yq
@@ -79,8 +79,6 @@ sudo dnf copr enable david35mm/ProtonUpdater -yq
 sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo \
   -O /etc/yum.repos.d/virtio-win.repo
  
-# add jotta-cli for backups
-echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
 
 # update repositories
 
