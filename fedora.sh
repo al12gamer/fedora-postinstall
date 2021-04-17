@@ -115,6 +115,9 @@ tar -xvf Proton-5.9-GE-8-ST.tar.gz ~/Proton
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # add zsh config
 
+# add Mullvad
+wget --content-disposition https://mullvad.net/download/app/rpm/latest
+
 # upgrade packages
 sudo dnf upgrade -yq
 sudo dnf autoremove -yq
