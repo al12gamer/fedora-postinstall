@@ -5,14 +5,11 @@ PACKAGE_LIST=(
 	calibre
 	zsh
 	fira-code-fonts
-	akmod-nvidia
 	lutris
 	steam
 	legendary
-	jotta-cli
 	vlc
 	gamemode
-	ProtonUpdater
 	mcomix3
 	qbittorrent
 	htop
@@ -33,6 +30,7 @@ PACKAGE_LIST=(
 	java-latest-openjdk
 	java-11-openjdk
 	wine
+	heroic-games-launcher-bin
 	
 )
 
@@ -72,14 +70,13 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # add third party software
 
-# add Proton Updater from COPR
-sudo dnf copr enable david35mm/ProtonUpdater -yq
-
 # add virtio
 sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo \
   -O /etc/yum.repos.d/virtio-win.repo
+  
+# add heroic games launcher
+sudo dnf copr enable atim/heroic-games-launcher -y
  
-
 # update repositories
 
 sudo dnf check-update -yq
