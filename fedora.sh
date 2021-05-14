@@ -31,13 +31,12 @@ PACKAGE_LIST=(
 	java-11-openjdk
 	wine
 	heroic-games-launcher-bin
+	discord
 	
 )
 
 FLATPAK_LIST=(
-	info.febvre.Komikku
 	org.gnome.Podcasts
-	com.discordapp.Discord
 	com.github.calo001.fondo
 	io.lbry.lbry-app
 	org.telegram.desktop
