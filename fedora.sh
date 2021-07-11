@@ -103,12 +103,6 @@ for flatpak_name in ${FLATPAK_LIST[@]}; do
 	fi
 done
 
-# grab the pre-5.13 stable Proton release
-echo "Grabbing Proton 5.9-GE-8 and extracting it to the Proton folder here, please move this to your new steam compatibility tools folder"
-sleep 1
-wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-GE-8-ST/Proton-5.9-GE-8-ST.tar.gz
-mkdir ~/Proton
-tar -xvf Proton-5.9-GE-8-ST.tar.gz ~/Proton
 
 # add ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
