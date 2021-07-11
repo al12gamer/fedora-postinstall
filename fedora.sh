@@ -2,6 +2,7 @@
 
 PACKAGE_LIST=(
 	vim
+	aha
 	calibre
 	zsh
 	fira-code-fonts
@@ -32,6 +33,7 @@ PACKAGE_LIST=(
 	wine
 	heroic-games-launcher-bin
 	discord
+	linux-util-user
 	
 )
 
@@ -41,6 +43,7 @@ FLATPAK_LIST=(
 	io.lbry.lbry-app
 	org.telegram.desktop
 	com.mojang.Minecraft
+	net.veloren.airshipper
 )
 
 # gnome settings
