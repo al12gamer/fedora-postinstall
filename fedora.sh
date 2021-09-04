@@ -34,6 +34,9 @@ PACKAGE_LIST=(
 	heroic-games-launcher-bin
 	discord
 	linux-util-user
+	alacritty
+	python3-pip
+	fwupd
 	
 )
 
@@ -108,9 +111,17 @@ done
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # add zsh config
 
+# add protonup (now that prerequisites are fulfilled)
+pip install protonup
+
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
 
 # upgrade packages
-sudo dnf upgrade -yq
+sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
 sudo dnf autoremove -yq
+
+echo "************************************************"
+echo "All good to go! Feel free to reboot your machine!"
+echo "************************************************"
+sleep 10
