@@ -2,7 +2,6 @@
 
 PACKAGE_LIST=(
 	vim
-	aha
 	calibre
 	zsh
 	fira-code-fonts
@@ -34,6 +33,7 @@ PACKAGE_LIST=(
 	alacritty
 	python3-pip
 	fwupd
+	radeontop
 	
 )
 
