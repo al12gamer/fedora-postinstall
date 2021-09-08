@@ -10,7 +10,6 @@ PACKAGE_LIST=(
 	steam
 	legendary
 	vlc
-	gamemode
 	mcomix3
 	qbittorrent
 	htop
@@ -25,8 +24,6 @@ PACKAGE_LIST=(
 	neofetch
 	nmap
 	pv
-	virt-manager
-	virtio-win
 	wget
 	java-latest-openjdk
 	java-11-openjdk
@@ -41,8 +38,6 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	org.gnome.Podcasts
-	com.github.calo001.fondo
 	io.lbry.lbry-app
 	org.telegram.desktop
 	com.mojang.Minecraft
@@ -74,10 +69,6 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -yq
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # add third party software
-
-# add virtio
-sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo \
-  -O /etc/yum.repos.d/virtio-win.repo
   
 # add heroic games launcher
 sudo dnf copr enable atim/heroic-games-launcher -y
