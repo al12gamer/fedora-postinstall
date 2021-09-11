@@ -35,7 +35,8 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -yq
 # add flathub repository
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# add third party software
+# install ZeroTier One
+curl -s https://install.zerotier.com | sudo bash
 
 # add winepak flathub
 sudo flatpak remote-add --if-not-exists winepak https://dl.winepak.org/repo/winepak.flatpakrepo
