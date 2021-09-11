@@ -100,13 +100,15 @@ done
 
 # add ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# add zsh config
 
 # add protonup (now that prerequisites are fulfilled)
 pip install protonup
 
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
+
+# add mesa-aco from GloriousEggroll
+sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
 
 # upgrade packages
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
