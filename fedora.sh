@@ -21,7 +21,6 @@ PACKAGE_LIST=(
 	python3-pip
 	youtube-dl
 	neofetch
-	nmap
 	pv
 	wget
 	java-latest-openjdk
