@@ -31,7 +31,6 @@ PACKAGE_LIST=(
 	discord
 	linux-util-user
 	alacritty
-	python3-pip
 	fwupd
 	radeontop
 	dnfdragora
@@ -75,6 +74,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # eggy's repo
 sudo dnf copr enable gloriouseggroll/nobara-repos -yq
+sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
   
 # add heroic games launcher
 sudo dnf copr enable atim/heroic-games-launcher -y
@@ -112,9 +112,6 @@ pip install protonup
 
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
-
-# add mesa-aco from GloriousEggroll
-sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
 
 # upgrade packages
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
