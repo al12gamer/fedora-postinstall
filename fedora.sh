@@ -38,8 +38,8 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # install ZeroTier One
 curl -s https://install.zerotier.com | sudo bash
 
-# add winepak flathub
-sudo flatpak remote-add --if-not-exists winepak https://dl.winepak.org/repo/winepak.flatpakrepo
+# add nobara repos by eggy
+dnf copr enable gloriouseggroll/nobara-repos -yq
 
 # update repositories
 
