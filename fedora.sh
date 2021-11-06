@@ -29,11 +29,9 @@ PACKAGE_LIST=(
 	heroic-games-launcher-bin
 	discord
 	linux-util-user
-	alacritty
 	fwupd
 	radeontop
 	dnfdragora
-	system76-power
 )
 
 FLATPAK_LIST=(
@@ -74,9 +72,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # eggy's repo recommendations for gaming and performance
 sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
 sudo dnf copr enable sentry/kernel-fsync -yq
-
-# add szydell for system76-power package, but feel free to install the driver if you own system76 hardware
-sudo dnf copr enable szydell/system76 -yq
   
 # add heroic games launcher
 sudo dnf copr enable atim/heroic-games-launcher -yq
