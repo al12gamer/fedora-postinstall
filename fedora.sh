@@ -3,8 +3,8 @@
 PACKAGE_LIST=(
 	vim
 	calibre
-	zsh
 	codium
+	fish
 	fira-code-fonts
 	lutris
 	steam
@@ -15,7 +15,6 @@ PACKAGE_LIST=(
 	htop
 	gnome-boxes
 	handbrake
-	gnome-extensions-app
 	gnome-tweaks
 	gnome-shell-extension-pop-shell
 	python3
@@ -25,8 +24,8 @@ PACKAGE_LIST=(
 	pv
 	wget
 	java-latest-openjdk
-	java-11-openjdk
 	wine
+	winetricks
 	heroic-games-launcher-bin
 	discord
 	linux-util-user
@@ -72,9 +71,10 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # add third party software
 
-# eggy's repo
-sudo dnf copr enable gloriouseggroll/nobara-repos -yq
+# eggy's repo recommendations for gaming and performance
 sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
+sudo dnf copr enable sentry/kernel-fsync 
+
   
 # add heroic games launcher
 sudo dnf copr enable atim/heroic-games-launcher -y
@@ -104,8 +104,7 @@ for flatpak_name in ${FLATPAK_LIST[@]}; do
 done
 
 
-# add ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# add fish
 
 # add protonup (now that prerequisites are fulfilled)
 pip install protonup
