@@ -32,6 +32,7 @@ PACKAGE_LIST=(
 	fwupd
 	radeontop
 	dnfdragora
+	openssl
 )
 
 FLATPAK_LIST=(
