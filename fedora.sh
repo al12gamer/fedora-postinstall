@@ -8,7 +8,6 @@ PACKAGE_LIST=(
 	fira-code-fonts
 	lutris
 	steam
-	legendary
 	vlc
 	mcomix3
 	qbittorrent
@@ -23,7 +22,6 @@ PACKAGE_LIST=(
 	neofetch
 	pv
 	wget
-	java-latest-openjdk
 	wine
 	winetricks
 	heroic-games-launcher-bin
@@ -31,7 +29,6 @@ PACKAGE_LIST=(
 	linux-util-user
 	fwupd
 	radeontop
-	dnfdragora
 	openssl
 )
 
@@ -57,7 +54,7 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 
 # install multimedia packages
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -yq
+sudo dnf groupupdate multimedia --exclude=PackageKit-gstreamer-plugin -yq
 
 sudo dnf groupupdate sound-and-video -yq
 
@@ -73,9 +70,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # eggy's repo recommendations for gaming and performance
 sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
 sudo dnf copr enable sentry/kernel-fsync -yq
-  
-# add heroic games launcher
-sudo dnf copr enable atim/heroic-games-launcher -yq
  
 # update repositories
 
