@@ -10,7 +10,6 @@ PACKAGE_LIST=(
 	steam
 	vlc
 	mcomix3
-	qbittorrent
 	htop
 	gnome-boxes
 	handbrake
@@ -24,7 +23,6 @@ PACKAGE_LIST=(
 	wget
 	wine
 	winetricks
-	heroic-games-launcher-bin
 	discord
 	linux-util-user
 	fwupd
@@ -37,6 +35,9 @@ FLATPAK_LIST=(
 	org.telegram.desktop
 	com.mojang.Minecraft
 	net.veloren.airshipper
+	com.belmoussaoui.Authenticator
+	de.haeckerfelix.Fragments
+	org.gnome.Polari.flatpakref
 )
 
 # gnome settings
