@@ -100,7 +100,7 @@ done
 # add fish
 
 # add protonup (now that prerequisites are fulfilled)
-pip install protonup
+pip install -y protonup
 
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
