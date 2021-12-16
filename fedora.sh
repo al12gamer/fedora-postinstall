@@ -26,12 +26,10 @@ PACKAGE_LIST=(
 	discord
 	linux-util-user
 	fwupd
-	radeontop
 	openssl
 )
 
 FLATPAK_LIST=(
-	io.lbry.lbry-app
 	org.telegram.desktop
 	com.mojang.Minecraft
 	net.veloren.airshipper
