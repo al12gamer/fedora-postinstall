@@ -53,7 +53,7 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 
 # install multimedia packages
-sudo dnf groupupdate multimedia --exclude=PackageKit-gstreamer-plugin -yq
+sudo dnf groupupdate multimedia -yq
 
 sudo dnf groupupdate sound-and-video -yq
 
@@ -68,7 +68,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # eggy's repo recommendations for gaming and performance
 sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
-sudo dnf copr enable sentry/kernel-fsync -yq
  
 # update repositories
 
