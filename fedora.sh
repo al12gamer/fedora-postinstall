@@ -12,7 +12,6 @@ PACKAGE_LIST=(
 	mcomix3
 	htop
 	gnome-boxes
-	handbrake
 	gnome-tweaks
 	gnome-shell-extension-pop-shell
 	python3
@@ -35,7 +34,6 @@ FLATPAK_LIST=(
 	net.veloren.airshipper
 	com.belmoussaoui.Authenticator
 	de.haeckerfelix.Fragments
-	org.gnome.Polari.flatpakref
 )
 
 # gnome settings
