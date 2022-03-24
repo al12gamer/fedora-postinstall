@@ -30,10 +30,9 @@ PACKAGE_LIST=(
 
 FLATPAK_LIST=(
 	org.telegram.desktop
-	com.mojang.Minecraft
 	net.veloren.airshipper
-	com.belmoussaoui.Authenticator
 	de.haeckerfelix.Fragments
+	net.davidotek.pupgui2
 )
 
 # gnome settings
@@ -92,10 +91,6 @@ for flatpak_name in ${FLATPAK_LIST[@]}; do
 done
 
 
-# add fish
-
-# add protonup (now that prerequisites are fulfilled)
-pip install -y protonup
 
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
