@@ -33,6 +33,7 @@ FLATPAK_LIST=(
 	net.veloren.airshipper
 	de.haeckerfelix.Fragments
 	net.davidotek.pupgui2
+	com.usebottles.bottles
 )
 
 # gnome settings
