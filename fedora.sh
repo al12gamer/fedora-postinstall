@@ -13,7 +13,6 @@ PACKAGE_LIST=(
 	htop
 	gnome-boxes
 	gnome-tweaks
-	gnome-shell-extension-pop-shell
 	python3
 	python3-pip
 	youtube-dl
@@ -26,14 +25,16 @@ PACKAGE_LIST=(
 	linux-util-user
 	fwupd
 	openssl
+	qbittorrent
+	cpu-x
 )
 
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
-	de.haeckerfelix.Fragments
 	net.davidotek.pupgui2
 	com.usebottles.bottles
+	org.signal.Signal
 )
 
 # gnome settings
@@ -66,6 +67,12 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # eggy's repo recommendations for gaming and performance
 sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
+
+# add brave browser for chromium testing pages
+sudo dnf install dnf-plugins-core -yq
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install brave-browser
  
 # update repositories
 
