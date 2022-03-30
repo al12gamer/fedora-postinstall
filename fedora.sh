@@ -3,7 +3,6 @@
 PACKAGE_LIST=(
 	vim
 	calibre
-	codium
 	fish
 	fira-code-fonts
 	lutris
@@ -42,23 +41,21 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 # enable rpmfusion
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yq
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
-sudo dnf groupupdate core -yq
+sudo dnf groupupdate core -y
 
 # install development tools 
-sudo dnf groupinstall "Development Tools" -yq
-sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg  -yq
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" | sudo tee -a /etc/yum.repos.d/vscodium.repo
+sudo dnf groupinstall "Development Tools" -y
 
 # install multimedia packages
-sudo dnf groupupdate multimedia -yq
+sudo dnf groupupdate multimedia -y
 
-sudo dnf groupupdate sound-and-video -yq
+sudo dnf groupupdate sound-and-video -y
 
 # fedora better fonts
-sudo dnf copr enable dawid/better_fonts -yq
-sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -yq
+sudo dnf copr enable dawid/better_fonts -y
+sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 
 # add flathub repository
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -66,17 +63,17 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add third party software
 
 # eggy's repo recommendations for gaming and performance
-sudo dnf copr enable gloriouseggroll/mesa-aco -yq 
+sudo dnf copr enable gloriouseggroll/mesa-aco -y
 
 # add brave browser for chromium testing pages
-sudo dnf install dnf-plugins-core -yq
+sudo dnf install dnf-plugins-core -y
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser
  
 # update repositories
 
-sudo dnf check-update -yq
+sudo dnf check-update -y
 
 # iterate through packages and installs them if not already installed
 for package_name in ${PACKAGE_LIST[@]}; do
