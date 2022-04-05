@@ -26,6 +26,7 @@ PACKAGE_LIST=(
 	openssl
 	qbittorrent
 	cpu-x
+	heif-gdk-pixbuf
 )
 
 FLATPAK_LIST=(
@@ -104,13 +105,10 @@ wget --content-disposition https://mullvad.net/download/app/rpm/latest
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
 sudo dnf autoremove -yq
 
-echo "-----------adding fish alias-----------"
+echo "-----------heres your fish alias-----------"
 sleep 2
-/usr/bin/fish
-alias -s ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y'
-echo "exiting fish"
-sleep 2
-exit
+echo " ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y' "
+
 
 echo "************************************************"
 echo "All good to go! Feel free to reboot your machine!"
