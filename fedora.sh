@@ -50,8 +50,9 @@ sudo dnf groupupdate core -y
 sudo dnf groupinstall "Development Tools" -y
 
 # install multimedia packages
-sudo dnf groupupdate multimedia -y
 
+sudo dnf groupinstall multimedia -y
+sudo dnf groupupdate multimedia -y
 sudo dnf groupupdate sound-and-video -y
 
 # fedora better fonts
