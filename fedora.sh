@@ -8,6 +8,7 @@ PACKAGE_LIST=(
 	lutris
 	steam
 	vlc
+	vlc-plugin-access-extra
 	mcomix3
 	htop
 	gnome-boxes
