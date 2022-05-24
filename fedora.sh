@@ -34,7 +34,6 @@ FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
 	net.davidotek.pupgui2
-	com.usebottles.bottles
 	org.signal.Signal
 )
 
@@ -64,9 +63,6 @@ sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # add third party software
-
-# eggy's repo recommendations for gaming and performance
-sudo dnf copr enable gloriouseggroll/mesa-aco -y
 
 # add brave browser for chromium testing pages
 sudo dnf install dnf-plugins-core -y
