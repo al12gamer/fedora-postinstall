@@ -99,10 +99,6 @@ done
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
 
-# add xanmod
-sudo dnf copr enable rmnscnce/kernel-xanmod
-sudo dnf install kernel-xanmod-edge -y
-
 # upgrade packages
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
 sudo dnf autoremove -y
