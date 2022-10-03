@@ -99,9 +99,13 @@ done
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
 
+## add liquorix kernel for better performance, basically zen kernel
+sudo dnf copr enable rmnscnce/kernel-lqx
+
 # upgrade packages
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
 sudo dnf autoremove -y
+sudo dnf install kernel-lqx -y
 
 echo "-----------heres your fish alias-----------"
 sleep 2
