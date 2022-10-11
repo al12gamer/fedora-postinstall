@@ -24,10 +24,10 @@ PACKAGE_LIST=(
 	discord
 	linux-util-user
 	fwupd
-	openssl
 	qbittorrent
 	cpu-x
 	heif-gdk-pixbuf
+	kitty
 )
 
 FLATPAK_LIST=(
