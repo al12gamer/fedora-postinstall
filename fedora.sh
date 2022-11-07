@@ -35,6 +35,7 @@ FLATPAK_LIST=(
 	net.veloren.airshipper
 	net.davidotek.pupgui2
 	org.signal.Signal
+	com.gitlab.newsflash
 )
 
 # gnome settings
