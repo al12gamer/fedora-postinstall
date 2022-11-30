@@ -12,7 +12,6 @@ PACKAGE_LIST=(
 	mcomix3
 	htop
 	gnome-boxes
-	gnome-tweaks
 	python3
 	python3-pip
 	youtube-dl
@@ -36,6 +35,7 @@ FLATPAK_LIST=(
 	net.davidotek.pupgui2
 	org.signal.Signal
 	com.gitlab.newsflash
+	org.kde.tokodon
 )
 
 # gnome settings
@@ -103,7 +103,7 @@ wget --content-disposition https://mullvad.net/download/app/rpm/latest
 ## add liquorix kernel for better performance, basically zen kernel
 sudo dnf copr enable rmnscnce/kernel-lqx
 
-# upgrade packages
+# upgrade packages and install liqourix kernel
 sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
 sudo dnf autoremove -y
 sudo dnf install kernel-lqx -y
