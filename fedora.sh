@@ -2,6 +2,7 @@
 
 PACKAGE_LIST=(
 	vim
+	btop
 	calibre
 	fish
 	fira-code-fonts
