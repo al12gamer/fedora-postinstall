@@ -22,7 +22,6 @@ PACKAGE_LIST=(
 	wine
 	winetricks
 	discord
-	linux-util-user
 	fwupd
 	qbittorrent
 	cpu-x
