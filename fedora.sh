@@ -35,6 +35,7 @@ FLATPAK_LIST=(
 	net.davidotek.pupgui2
 	org.signal.Signal
 	org.kde.tokodon
+	info.febvre.Komikku
 )
 
 # gnome settings
