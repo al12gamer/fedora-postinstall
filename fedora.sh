@@ -26,7 +26,6 @@ PACKAGE_LIST=(
 	qbittorrent
 	cpu-x
 	heif-gdk-pixbuf
-	kitty
 )
 
 FLATPAK_LIST=(
@@ -55,10 +54,6 @@ sudo dnf groupinstall "Development Tools" -y
 sudo dnf groupinstall multimedia -y
 sudo dnf groupupdate multimedia -y
 sudo dnf groupupdate sound-and-video -y
-
-# fedora better fonts
-sudo dnf copr enable dawid/better_fonts -y
-sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements -y
 
 # add flathub repository
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -99,14 +94,6 @@ done
 
 # add Mullvad
 wget --content-disposition https://mullvad.net/download/app/rpm/latest
-
-## add liquorix kernel for better performance, basically zen kernel
-sudo dnf copr enable rmnscnce/kernel-lqx
-
-# upgrade packages and install liqourix kernel
-sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates
-sudo dnf autoremove -y
-sudo dnf install kernel-lqx -y
 
 echo "-----------heres your fish alias-----------"
 sleep 2
