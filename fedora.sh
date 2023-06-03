@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# this script assumes a Fedora Gnome install
 
 PACKAGE_LIST=(
 	vim
