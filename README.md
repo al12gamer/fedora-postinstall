@@ -1,7 +1,7 @@
 # Fedora Post Install Script
 
 A small shell script for personal use, forked from FHEK789. Thanks mate!
-Now that I mainly use Fedora, this'll setup my daily driver/gaming machine the way that works best.
+Now that I mainly use Fedora, this'll setup my daily driver/gaming machine the way that works best. Feel free to peruse the bash script to see if the programs in the program list are right for you.
 
 ## Quick Start
 ```bash
