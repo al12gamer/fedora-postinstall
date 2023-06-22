@@ -5,7 +5,6 @@ PACKAGE_LIST=(
 	vim
 	btop
 	calibre
-	fish
 	fira-code-fonts
 	lutris
 	steam
@@ -34,13 +33,8 @@ FLATPAK_LIST=(
 	net.veloren.airshipper
 	net.davidotek.pupgui2
 	org.signal.Signal
-	org.kde.tokodon
 	info.febvre.Komikku
 )
-
-# gnome settings
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 # enable rpmfusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
@@ -76,7 +70,7 @@ for package_name in ${PACKAGE_LIST[@]}; do
 	if ! sudo dnf list --installed | grep -q "^\<$package_name\>"; then
 		echo "installing $package_name..."
 		sleep .5
-		sudo dnf install "$package_name" -y
+		sudo dnf install "$package_name" -yq
 		echo "$package_name installed"
 	else
 		echo "$package_name already installed"
@@ -85,7 +79,7 @@ done
 
 for flatpak_name in ${FLATPAK_LIST[@]}; do
 	if ! flatpak list | grep -q $flatpak_name; then
-		flatpak install "$flatpak_name" -y
+		flatpak install "$flatpak_name" -yq
 	else
 		echo "$package_name already installed"
 	fi
@@ -99,7 +93,10 @@ wget --content-disposition https://mullvad.net/download/app/rpm/latest
 echo "-----------heres your fish alias-----------"
 sleep 2
 echo " ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y' "
-
+sleep 2
+echo "-----add this to bashrc for updating mullvad manually-----"
+echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-rpm -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cowsay DONE NOW'
+sleep 4
 
 echo "************************************************"
 echo "All good to go! Feel free to reboot your machine!"
