@@ -34,6 +34,7 @@ FLATPAK_LIST=(
 	net.davidotek.pupgui2
 	org.signal.Signal
 	info.febvre.Komikku
+ 	im.riot.Riot
 )
 
 # enable rpmfusion
