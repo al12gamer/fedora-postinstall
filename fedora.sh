@@ -96,7 +96,7 @@ sleep 2
 echo " ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y' "
 sleep 2
 echo "-----add this to bashrc for updating mullvad manually-----"
-echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-rpm -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cowsay DONE NOW'
+echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cowsay DONE NOW'
 sleep 4
 
 echo "************************************************"
