@@ -5,6 +5,8 @@ PACKAGE_LIST=(
 	vim
 	btop
 	calibre
+ 	cowsay
+  	asciinema
 	fira-code-fonts
 	lutris
 	steam
@@ -35,6 +37,7 @@ FLATPAK_LIST=(
 	org.signal.Signal
 	info.febvre.Komikku
  	im.riot.Riot
+  	org.onionshare.OnionShare
 )
 
 # enable rpmfusion
@@ -89,14 +92,14 @@ done
 
 
 # add Mullvad
-wget --content-disposition https://mullvad.net/download/app/rpm/latest
+cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/download/app/rpm/latest
+cd
 
 echo "-----------heres your fish alias-----------"
 sleep 2
-echo " ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y' "
+alias -p ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y'
 sleep 2
-echo "-----add this to bashrc for updating mullvad manually-----"
-echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cowsay DONE NOW'
+alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cd && cowsay DONE NOW'
 sleep 4
 
 echo "************************************************"
