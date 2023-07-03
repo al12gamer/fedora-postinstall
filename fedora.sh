@@ -95,11 +95,13 @@ done
 cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/download/app/rpm/latest
 cd
 
-echo "-----------heres your fish alias-----------"
+echo "ADDING BASH ALIASES"
 sleep 2
 alias -p ul='sudo dnf distro-sync -y && sudo dnf update --refresh -y && flatpak update -y && flatpak remove --unused && sudo fwupdmgr get-updates && sudo dnf autoremove -y'
 sleep 2
 alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo dnf remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/rpm/latest && sudo rpm -i Mullvad*.rpm && cd && cowsay DONE NOW'
+clear
+alias
 sleep 4
 
 echo "************************************************"
