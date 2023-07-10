@@ -1,9 +1,9 @@
 # Fedora Post Install Script
 
-A small shell script for personal use, forked from FHEK789. Thanks mate! I've made a good few changes here, but kept the original structure.
-Now that I mainly use Fedora, this'll setup my daily driver/gaming machine the way that works best. Feel free to peruse the bash script to see if the programs in the program list are right for you.
+A small shell script for personal use, originally forked from FHEK789. Now, I've gone ahead and migrated everything to Ansible for easier installation and version control. 
 
 ## Quick Start
+Note that you will need Ansible installed for this script to run
 ```bash
 git clone https://github.com/al12gamer/fedora-postinstall.git
 cd fedora-postinstall

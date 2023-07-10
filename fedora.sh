@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # this script assumes a Fedora Gnome install
+# TODO - take packages from flatpak and dnf package lists, and add to ansible role...also have this bash script mainly install ansible and run the role
 
 PACKAGE_LIST=(
 	vim
